@@ -1,77 +1,88 @@
-/* 
-GitHub Copilot Prompts Used:
-
-- Style the body with center alignment and background color
-- Style the game title with larger font size
-- Style the scoreboard display
-- Style the rock, paper, scissors buttons with padding and hover effect
-- Add spacing between buttons and center them
-- Style the result display area with bold text
-- Style the Play Again button
-- Add responsive styling for smaller screens
-*/
-
 body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: radial-gradient(circle at top, #2c3e50, #000);
+  color: #fff;
   text-align: center;
-  font-family: Arial, sans-serif;
-  background: #f7f7f7;
-  padding: 40px;
+  padding: 20px;
+}
+
+.game-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
 }
 
 h1 {
   font-size: 32px;
   margin-bottom: 20px;
+  color: #00ffe7;
 }
 
-#score {
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
   font-size: 18px;
   margin-bottom: 20px;
 }
 
-.choices {
-  margin: 20px 0;
-}
-
-.choice {
-  font-size: 18px;
-  padding: 12px 24px;
+.choices button {
+  font-size: 32px;
+  padding: 15px 25px;
   margin: 10px;
-  cursor: pointer;
-  background-color: #ffffff;
-  border: 2px solid #333;
-  border-radius: 8px;
-  transition: background 0.3s;
-}
-
-.choice:hover {
-  background-color: #e0e0e0;
-}
-
-#result {
-  font-size: 20px;
-  margin-top: 20px;
-  font-weight: bold;
-}
-
-#play-again {
-  margin-top: 30px;
-  padding: 10px 20px;
-  font-size: 16px;
   border: none;
-  background-color: #007bff;
-  color: white;
-  border-radius: 6px;
+  border-radius: 15px;
+  background-color: #00adb5;
+  color: #fff;
   cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-#play-again:hover {
-  background-color: #0056b3;
+.choices button:hover {
+  background-color: #008b8f;
+  transform: scale(1.1);
 }
 
-@media (max-width: 500px) {
-  .choice {
-    display: block;
-    margin: 10px auto;
-    width: 80%;
+.results {
+  margin-top: 30px;
+}
+
+.result-message {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffc107;
+  transition: all 0.3s ease;
+}
+
+.reset-btn {
+  margin-top: 25px;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #ff1744;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.reset-btn:hover {
+  background: #d50000;
+}
+
+@media (max-width: 600px) {
+  .choices button {
+    font-size: 28px;
+    padding: 10px 15px;
+  }
+
+  h1 {
+    font-size: 26px;
   }
 }

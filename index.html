@@ -1,42 +1,39 @@
-<!-- 
-GitHub Copilot Prompts Used:
-
-- Create a simple HTML layout for Rock Paper Scissors game
-- Add heading for the game title
-- Add a scoreboard section with player and computer scores
-- Add buttons for Rock, Paper, and Scissors with icons
-- Add a div to display round results and messages
-- Add a Play Again button that is hidden by default
-- Link the external CSS file
-- Link the external JavaScript file
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rock Paper Scissors</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rock Paper Scissors - Tejal</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Rock Paper Scissors</h1>
+  <div class="game-container">
+    <h1>Rock Paper Scissors</h1>
 
-  <div id="score">
-    Player: <span id="player-score">0</span> |
-    Computer: <span id="computer-score">0</span> |
-    Round: <span id="round">0</span>/5
+    <div class="scoreboard">
+      <div>🧑 Player: <span id="player-score">0</span></div>
+      <div>💻 Computer: <span id="computer-score">0</span></div>
+    </div>
+
+    <div class="choices">
+      <button onclick="play('rock')">🪨</button>
+      <button onclick="play('paper')">📄</button>
+      <button onclick="play('scissors')">✂️</button>
+    </div>
+
+    <div class="results">
+      <p><strong>You:</strong> <span id="player-choice">-</span></p>
+      <p><strong>Computer:</strong> <span id="computer-choice">-</span></p>
+      <p class="result-message">Make your move!</p>
+    </div>
+
+    <button class="reset-btn" onclick="resetGame()">🔁 Reset</button>
   </div>
 
-  <div class="choices">
-    <button class="choice" data-choice="rock">🪨 Rock</button>
-    <button class="choice" data-choice="paper">📄 Paper</button>
-    <button class="choice" data-choice="scissors">✂️ Scissors</button>
-  </div>
-
-  <div id="result"></div>
-
-  <button id="play-again" style="display:none;">Play Again</button>
+  <audio id="winSound" src="assets/win.mp3"></audio>
+  <audio id="loseSound" src="assets/lose.mp3"></audio>
+  <audio id="drawSound" src="assets/draw.mp3"></audio>
 
   <script src="script.js"></script>
 </body>
